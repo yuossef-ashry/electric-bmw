@@ -1,13 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root {
   --main-color: #024CAA;
-
   --section-padding: 100px;
 }
-/* End Variables */
-/* Start Global Rules */
+
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -16,7 +14,7 @@ body{
     
 background-color: black;
     color: white;
-     font-family: "Marhey", sans-serif;
+font-family: "Bebas Neue", serif;
      padding-left: 70px;
      padding-right: 70px;
 }
@@ -24,72 +22,86 @@ background-color: black;
 
 a{
   text-decoration: none;
-}/* Start header */
-header {
-  position: relative;
 }
-header::after {
-  content: "";
-  width: 90%;
-  height: 1.5px;
-  background-color: var(--second-color);
-  position: absolute;
-  left: 5%;
-  bottom: 0;
+/* Start Header */
+.header {
+  padding-top: 20px;
+padding-bottom: 20px;
+  border-bottom: 1px white solid;
 }
-header .container {
-  width: 80%;
+.header .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  align-items: center;
+  color: #024CAA;
+font-family: "Bebas Neue", serif;
+
 }
-header .container .page-name {
-  color: var(--main-color);
-  font-size: 40px;
+.header .logo {
+  width: 60px;
 }
-header .container .logo {
+.header .links {
   position: relative;
 }
-header .container .logo img {
-  width: 40px;
-  height: 40px;
+.header .links:hover .icon span:nth-child(2) {
+  width: 100%;
 }
-header ul {
+
+
+.header .links .icon span:first-child {
+  width: 100%;
+}
+.header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: var(--main-duration);
+}
+.header .links .icon span:last-child {
+  width: 100%;
+}
+.header .links ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
   position: absolute;
   right: 0;
+  min-width: 200px;
+  color: white;
   top: calc(100% + 15px);
-  background-color: rgba(0, 0, 0, 0.354);
-  min-width: 170px;
-  border-radius: 5px;
-  padding-left: 10px;
   display: none;
+  z-index: 1;
 }
-header ul::before {
+.header .links ul::before {
   content: "";
-  border-width: 12px;
+  border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent rgba(0, 0, 0, 0.354) transparent;
+  border-color: transparent transparent #000000 transparent;
   position: absolute;
-  right: 8px;
-  top: -24px;
+  color: white;
+  right: 5px;
+  top: -20px;
 }
-header ul a {
+.header .links:hover ul {
+  display: block;
+}
+.header .links ul li a {
+  display: block;
+  padding: 15px;
   text-decoration: none;
-  display: block;
-  margin: 15px;
-  transition: 0.3s;
-  font-size: 18px;
-  color: var(--second-color);
+  color: #ffffff;
+font-family: "Bebas Neue", serif;
+  
+  transition: var(--main-duration);
 }
-header ul a:hover {
-  padding-left: 20px;
+.header .links ul li a:hover {
+  padding-left: 25px;
 }
-header .logo:hover ul {
-  display: block;
+.header .links ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
 }
-/* End header */
+/* End Header */
+
+
 /* Start Landing */
 
 .video-background {
@@ -118,7 +130,7 @@ button {
   color: white;
   transition: 1s;
   border-radius: 0.3em;
-  font-family: "Bebas Neue", sans-serif;
+font-family: "Bebas Neue", serif;
   font-size: 40px;
     letter-spacing: 5px;
   font-weight: bold;
@@ -446,14 +458,11 @@ video {
   animation: bouncing 1.5s infinite;
 }
 /* End Landing */
-
-
-
 /* Start Footer */
 .footer {
   background-color: #000000;
   padding: 40px 0 0;
-   border-top: 0.5px solid #444;
+  border-top: 0.5px solid #444;
 }
 @media (max-width: 700px) {
   .footer {
@@ -463,10 +472,9 @@ video {
 .footer .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
 }
 .footer .box h3 {
-  color: #024CAA;
+  color: #024caa;
   font-size: 50px;
   margin: 0 0 20px;
 }
@@ -504,16 +512,15 @@ video {
 }
 .footer .box .links li {
   padding: 15px 0;
- 
+
   transition: var(--main-transition);
 }
 
 .footer .box .links li:hover {
   padding-left: 10px;
-
 }
 .footer .box .links li:hover a {
-  color: #024CAA;
+  color: #024caa;
 }
 .footer .box .links li a {
   color: #b9b9b9;
@@ -534,7 +541,7 @@ video {
 }
 .footer .box .line i {
   font-size: 25px;
-  color:#024CAA;
+  color: #024caa;
   margin-right: 10px;
 }
 @media (max-width: 767px) {
@@ -563,4 +570,3 @@ video {
   border-top: 1px solid #444;
 }
 /* End Footer */
-
